@@ -8,6 +8,7 @@ const List<Color> _colorThemes = [
   Colors.red,
   Colors.purple,
   Colors.orange,
+  Color.fromARGB(255, 252, 252, 252)
 ];
 
 class AppTheme {
@@ -17,7 +18,7 @@ class AppTheme {
   AppTheme({
     this.selectedColor = 0
   }): assert(selectedColor >= 0, 'selectedColor deber ser mayor a 0'),
-        assert(selectedColor < _colorThemes.length, 'selectedColor deber ser menor a ${_colorThemes.length - 1}');
+        assert(selectedColor <= _colorThemes.length, 'selectedColor deber ser menor a ${_colorThemes.length - 1}');
   ThemeData theme() {
     return ThemeData(
       useMaterial3: true,
